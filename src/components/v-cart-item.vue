@@ -46,8 +46,8 @@ export default {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 8px 0 #e0e0e0;
-    // padding: $padding*2;
-    // margin-bottom: $margin*2;
+    padding: $padding*2;
+    margin-bottom: $margin*2;
     &__image {
       max-width: 50px;
     }

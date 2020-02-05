@@ -33,7 +33,8 @@ let store = new Vuex.Store({
       state.cart.splice(index, 1)
     }
   },
-  actions: { //получаем данные с сервера с помощью axios
+  actions: {
+    //получаем данные с сервера с помощью axios
     GET_PRODUCTS_FROM_API({commit}) {
       return axios('http://localhost:3000/products', { //ccылка берется из --watch db.json
         method: "GET"
