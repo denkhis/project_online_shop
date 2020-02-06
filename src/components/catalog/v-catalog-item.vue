@@ -1,6 +1,6 @@
 <template>
   <div class="v-catalog-item">
-    <img class="v-catalog-item__image" v-bind:src=" require('../assets/images/' + product_data.image) " alt="img">
+    <img class="v-catalog-item__image" v-bind:src=" require('../../assets/images/' + product_data.image) " alt="img">
     <p class="v-catalog-item_name">{{product_data.name}}</p>
     <p class="v-catalog-item_price">Price: {{product_data.price}} Р</p>
     <button 
@@ -31,6 +31,10 @@ export default {
     addToCart() { // передаем наверх родителю 
       this.$emit('addToCart', this.product_data)
     }
+  },
+  mounted() {
+    //добавляем в объект product_data ключ quantity
+    this.$set(this.product_data, 'quantity', 1) 
   }
 }
 </script>
@@ -39,8 +43,8 @@ export default {
   .v-catalog-item {
     flex-basis: 25%;
     box-shadow: 0 0 8px 0 #e0e0e0;
-    // padding: $padding*2;
-    // margin-bottom: $margin*2;
+    padding: $padding*2;
+    margin-bottom: $margin*2;
     &__image {
       width: 200px;
       height: 200px;
